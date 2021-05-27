@@ -3,9 +3,8 @@ package com.bathi.mylistviewapp;
 /**
  * Author: Bathi Ntshinga
  * Group: Part-Time
- * Stud_Nr: 214198227
- * Due Date: 31 May 2021
- * Description: Adding Adapter
+ * Student number: 214198227
+ * Class Description: Custom Adapter
  */
 import android.app.Activity;
 import android.view.LayoutInflater;
@@ -25,14 +24,14 @@ import androidx.annotation.Nullable;
 public class MyListAdapter extends ArrayAdapter<String> {
     private final Activity context;
     private final String [] proNames;
-    private final int[] proImages;
+    private final int[] proIcons;
 
 
-    public MyListAdapter(Activity context, String[] proNames, int[] proImages) {
+    public MyListAdapter(Activity context, String[] proNames, int[] proIcons) {
         super(context,R.layout.activity_image_list, proNames);
         this.context = context;
         this.proNames = proNames;
-        this.proImages = proImages;
+        this.proIcons = proIcons;
     }
 
     @NonNull
@@ -43,7 +42,7 @@ public class MyListAdapter extends ArrayAdapter<String> {
         TextView textView = (TextView) rowView.findViewById(R.id. textView2);
         ImageView imageView = (ImageView) rowView.findViewById(R.id.imageView1);
         textView.setText(proNames[position]);
-        imageView.setImageResource(proImages[position]);
+        imageView.setImageResource(proIcons[position]);
         return rowView;
     };
 

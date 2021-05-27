@@ -25,7 +25,7 @@ public class ListViewImage extends AppCompatActivity {
     Context context;
     ArrayList proMusic;
 
-    public static int[] proImages ={
+    public static int[] proIcons ={
             R.drawable.power, R.drawable.play, R.drawable.pause,
             R.drawable.backward, R.drawable.foward, R.drawable.rec,
             R.drawable.previous, R.drawable.next, R.drawable.stop,
@@ -39,7 +39,7 @@ public class ListViewImage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_view_image);
 
-        ArrayAdapter arrayAdapter = new MyListAdapter(this, proNames, proImages);
+        ArrayAdapter arrayAdapter = new MyListAdapter(this, proNames, proIcons);
         lv = (ListView) findViewById(R.id.listView2);
         lv.setAdapter(arrayAdapter);
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
