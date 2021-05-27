@@ -8,10 +8,13 @@
 
     <ListView
         android:id="@+id/listView2"
-        android:layout_height="597dp"
         android:layout_width="325dp"
+        android:layout_height="597dp"
         android:footerDividersEnabled="true"
         android:headerDividersEnabled="true"
-        tools:ignore="MissingConstraints" />
+        android:visibility="visible"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="79dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

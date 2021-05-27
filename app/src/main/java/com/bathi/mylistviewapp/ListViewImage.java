@@ -13,20 +13,22 @@ import android.os.Bundle;
 import android.view.View;
 
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
-
+import java.util.ArrayList;
 import androidx.appcompat.app.AppCompatActivity;
 
 
 public class ListViewImage extends AppCompatActivity {
     ListView lv;
     Context context;
+    ArrayList proMusic;
 
     public static int[] proImages ={
             R.drawable.power, R.drawable.play, R.drawable.pause,
             R.drawable.backward, R.drawable.foward, R.drawable.rec,
-            R.drawable.previous, R.drawable.next, R.drawable.stop
+            R.drawable.previous, R.drawable.next, R.drawable.stop,
     };
 
     public static String [] proNames ={
@@ -37,13 +39,13 @@ public class ListViewImage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_view_image);
 
-        MyListAdapter adapter = new MyListAdapter(this, proNames, proImages);
+        ArrayAdapter arrayAdapter = new MyListAdapter(this, proNames, proImages);
         lv = (ListView) findViewById(R.id.listView2);
-        lv.setAdapter(adapter);
+        lv.setAdapter(arrayAdapter);
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
 
-            public void onItemClick( AdapterView parent, View view, int position, long id){
+            @Override
+            public void onItemClick( AdapterView<?> parent, View view, int position, long id){
                 Toast.makeText(ListViewImage.this, "U clicked on:" + proNames[position], Toast.LENGTH_SHORT).show();
             }
         });
